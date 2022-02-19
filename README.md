@@ -45,9 +45,8 @@ On OpenShift there is a fancy [feature](https://docs.openshift.com/container-pla
 
 Additional the golden snitch is a proxy we can capture the incoming traffic and redirect it to the victim application. In that way the golden snitch will be less invasive and can be opted in and out with ease.
 
-##### Now some words of warning and disclaimer: 
-I'm not responsible for any harm caused by this tool. Also the nginx might leak some headers and info, for a well trained admin it shouldn't be a big deal to silence it. For script kiddies > sorry :) 
-I'm not responsible for any harm caused by this tool. Also the nginx might leak some headers and info, for a well trained admin it shouldn't be a big deal to silence it. For script kiddies > sorry :) 
+### Now some words of warning and disclaimer: 
+I'm not responsible for any harm caused by this tool. Also the nginx might leak some headers and info, for a well trained admin it shouldn't be a big deal to silence it. For script kiddies > sorry but it's better to keep it that way then :) 
 </p>
 
 ---
