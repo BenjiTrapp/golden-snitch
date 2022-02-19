@@ -1,3 +1,5 @@
+[![Anchore Container Scan](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/blank.yml/badge.svg)](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/blank.yml)
+
 <p align="center">
 <img src="static/golden-snitch-tag.png">
 </p>
