@@ -1,0 +1,55 @@
+{{- if .Values.build -}}
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: golden-snitch-image
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: golden-snitch
+spec:
+  output:
+    to:
+      kind: DockerImage
+      name: >-
+        {{ .Values.build.image}}:{{ .Values.build.version | default "latest" }}
+  resources:
+    limits:
+      cpu: '1'
+      memory: 1Gi
+  successfulBuildsHistoryLimit: 1
+  failedBuildsHistoryLimit: 1
+  strategy:
+    type: Docker
+    dockerStrategy:
+      {{- if .Values.dockerHubAcc -}}
+      pullSecret:
+        name: {{ .Values.dockerHubAcc.name | default "docker-hub" }}
+      {{- end -}}
+      env:
+      dockerfilePath: Dockerfile
+  source:
+    type: Git
+    git:
+      uri: https://github.com/BenjiTrapp/golden-snitch/tree/main/.github/workflows
+      ref: main
+    contextDir: /
+    dockerfile: |
+      FROM openresty/openresty:jessie
+      
+      # Run install as root - yes I'm cereal
+      USER 0
+
+      # Copy nginx config and lua script
+      COPY containerfiles /
+
+      # install lua and fix Permissions
+      RUN luarocks install luajson && \
+          mkdir -p /var/log/nginx && \
+          chmod -R ugo+rw /var/log/ && \
+          chmod -R ugo+rw /var/log/nginx && \
+          chmod -R ugo+rwx /usr/local/openresty
+          
+      USER 1001
+---
+{{- end -}}

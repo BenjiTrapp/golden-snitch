@@ -1,0 +1,24 @@
+# Usually a bad thing - but this time required for the proxy forward
+namespace: my-awesome-namespace
+
+# Name of the ServiceAccount of an application
+# you want to snitch with the  golden-snitch. 
+# This helper will log and forward the 
+# traffic to this Application 
+victimsServiceAccountName: my-silly-target
+
+#######################################################################
+#              OPTIONAL THINGS THAT MIGHT HELP                        #      
+#######################################################################
+
+# If you want to build your own image within OCP
+# build:
+#   image: your-repo/golden-snitch
+#   version: optional-and-semver-is-king
+
+# Since DockerHub added a rate limit this might help
+# dockerHubAcc:
+#     registry: https://index.docker.io/v1/
+#     username: someone
+#     password: stupid
+#     email: someone@axa.de

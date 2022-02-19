@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: golden-snitch
+  name: golden-snitch
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: golden-snitch
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: golden-snitch
+    spec:
+      containers:
+      - name: golden-snitch 
+        image: nyctophobia/golden-snitch:latest
+        imagePullPolicy: Always
+        ports:
+        - name: https
+          containerPort: 8080
+          protocol: TCP
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/local/openresty/nginx/conf
+        - name: lua-config
+          mountPath: /usr/local/openresty/nginx/lua
+        - name: golden-snitch-tls
+          mountPath: /etc/tls/private
+      serviceAccountName: {{ required "The ServiceAccount  name of the target is required to snitch"  .Values.victimsServiceAccountName  }}
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: golden-snitch-nginx-conf
+          defaultMode: 420
+      - name: lua-config
+        configMap:
+          name: golden-snitch-lua-conf
+          defaultMode: 420
+      - name: golden-snitch-tls
+        secret:
+          defaultMode: 420
+          secretName: golden-snitch-tls
+---

@@ -1,0 +1,5 @@
+# Ignore the temp dummy secrets to prevend unattended check in of credentials
+*/secrets/*
+.vscode/
+/.project
+.lsp/*
