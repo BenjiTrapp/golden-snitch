@@ -2,7 +2,7 @@
 <img src="static/golden-snitch-tag.png">
 </p>
 
-This tool can be used for good or bad things and comes with two use cases:
+This tool can be used for good or bad things and comes with two use cases dedicated to two of the four houses of Hogwarts:
 
 ### Gryffindor
 <img height="200" align="left" src="static/gryffindor-logo.png" >
@@ -13,7 +13,7 @@ Like playing with the [Marauder's Map](https://harrypotter.fandom.com/wiki/Marau
 <br>
 <br>
 
-### Slytherin:
+### Slytherin
 
 <img height="200" align="left" src="static/slytherin-logo.png" >
 Like a snake in the shadow you want to plan your next actions and snitch your target to optimize your attack. The golden snitch can be used to proxy your victims apllication and wait until valuable is coming across like a Token, Auth-Bearer Header or something else. Since this can be applied into your OpenShift and gain HTTPS certificates from your cluster it will be easy to trap muggles and lousy mages. No one will ever know that you can understand their cyphered secret language.
