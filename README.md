@@ -30,6 +30,8 @@ Like a snake in the shadow you want to plan your next actions and snitch your ta
 
 ### Heyho - let's go
 
+##### Prerequisites: oc client, helm, a openshift cluster and optional a dockerhub account
+
 To get started with this tool simply adjust the values in the `values.yaml`. All required fields are marked. Use the upcoming snippet to render the helm chart and apply it to the cluster. If you haven't installed the oc client, now is a good time to install it:
 
 ```bash
