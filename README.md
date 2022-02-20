@@ -1,4 +1,5 @@
 [![Docker](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/docker-publish.yml)
+[![Release Helm Chart](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/helm-releaser.yml/badge.svg)](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/helm-releaser.yml)
 [![Anchore Container Scan](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/blank.yml/badge.svg)](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/blank.yml)
 [![Checkov](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/checkov.yaml/badge.svg)](https://github.com/BenjiTrapp/golden-snitch/actions/workflows/checkov.yaml)
 
