@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: golden-snitch 
-        image: nyctophobia/golden-snitch:latest
+        image: ghcr.io/benjitrapp/golden-snitch:main
         imagePullPolicy: Always
         ports:
         - name: https
